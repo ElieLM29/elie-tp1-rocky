@@ -6,7 +6,7 @@ source "qemu" "example" {
   disk_size         = "7000M"
   format            = "qcow2"
   accelerator       = "kvm"
-  http_directory    = "/root/projet/tp1-rocky/packer-course-bootstrap/ks"
+  http_directory    = "/root/projet/elie-tp1-rocky/packer-course-bootstrap/ks"
   ssh_username      = "root"
   ssh_password      = "%Serveur44"
   ssh_timeout       = "960m"
@@ -26,7 +26,7 @@ build {
   sources = ["source.qemu.example"]
 
   provisioner "ansible" {      
-    playbook_file = "/root/projet/tp1-rocky/packer-course-bootstrap/playbook.yaml"
+    playbook_file = "/root/projet/elie-tp1-rocky/packer-course-bootstrap/playbook.yaml"
     user = "root"
     }
 }
