@@ -6,4 +6,16 @@
       package:
         name: git
         state: latest
+    - name: pull from git
+      git:
+        repo: https://github.com/BastienBalaud/golang-myip
+        dest: /root/golang
+        update: yes
+        version: master
+    - name: activation golang
+      command: cd /root/golang/golang-myip
+      command: make all
+      command: cd build
+      ansible.builtin.script: server.x86_64
+
  

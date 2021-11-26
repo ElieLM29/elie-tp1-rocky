@@ -19,7 +19,7 @@ source "qemu" "example" {
   display           = "none"
   headless          = "true"
   boot_wait         = "10s"
-  boot_command      = ["<tab> inst.text inst.ks=http://192.168.0.29:{{ .HTTPPort }}/rocky-8.cfg<enter><wait>"]
+  boot_command      = ["<tab> inst.text inst.ks=http://192.168.66.129:{{ .HTTPPort }}/rocky-8.cfg<enter><wait>"]
 }
 
 build {

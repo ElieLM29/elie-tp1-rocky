@@ -6,13 +6,4 @@
       package:
         name: git
         state: latest
-    - name: Install golang
-      yum:
-        name: go-toolset
-        state: latest
-    - name: activation golang
-      service:
-    name: go-toolset"
-    state: started
-    enabled: yes
  
