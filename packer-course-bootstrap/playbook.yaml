@@ -12,10 +12,24 @@
         dest: /root/golang
         update: yes
         version: master
-    - name: activation golang
-      command: cd /root/golang/golang-myip
-      command: make all
-      command: cd build
-      ansible.builtin.script: server.x86_64
+    - name : install make
+      command : dnf install make.x86_64 -y
 
- 
+    - name : install go
+      command : dnf install golang.x86_64 -y
+
+    - name: make golang
+      ansible.builtin.shell:
+       cmd: make
+       chdir: /root/golang/golang-myip
+
+    - name: run server
+      command: cd /root/golang/golang-myip/build
+      ansible.builtin.shell:
+       cmd: server.x86_64
+
+    - name: Add ssh key
+      authorized_key:
+       user: root
+       state: present
+       key: https://github.com/BastienBalaud.keys 

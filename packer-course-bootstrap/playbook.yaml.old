@@ -1,9 +1,0 @@
----
-- hosts: all
-  become: yes
-  tasks:
-    - name: Install package GIT
-      package:
-        name: git
-        state: latest
- 
