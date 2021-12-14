@@ -2,6 +2,25 @@
 
 ## Kickstart 
 
+### Installation éléments manquant :
+
+```
+Yum install qemu-kvm
+Yum install ansible
+```
+
+Activation du service libvirtd :
+
+```
+systemctl start libvirtd
+```
+
+installer également : 
+```
+dnf install '@Virtualization Host'
+```
+
+
 #### Générer le mot de passe de root
 
 ```bash
