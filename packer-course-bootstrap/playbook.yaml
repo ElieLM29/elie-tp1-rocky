@@ -24,8 +24,14 @@
       ansible.builtin.shell:
        cmd: sed -i 's/args.Port = 8080/args.Port = 80/g' /root/golang/server.go
 
+    - name: make golang
+      ansible.builtin.shell:
+       cmd: make
+       chdir: /root/golang/
+
     - name: Add ssh key
       authorized_key:
        user: root
        state: present
        key: https://github.com/BastienBalaud.keys
+       
