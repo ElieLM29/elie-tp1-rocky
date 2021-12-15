@@ -22,7 +22,7 @@
 
     - name: edit port
       ansible.builtin.shell:
-       cmd: sed -i 's/args.Port = 8080/args.Port = 80/g' /root/golang/golang-myip/server.go
+       cmd: sed -i 's/args.Port = 8080/args.Port = 80/g' /root/golang/server.go
 
     - name: Add ssh key
       authorized_key:
