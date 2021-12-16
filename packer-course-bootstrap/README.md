@@ -2,7 +2,7 @@
 
 ## Kickstart 
 
-### Installation éléments manquant :
+### Installation éléments manquants :
 
 ```
 Yum install qemu-kvm
