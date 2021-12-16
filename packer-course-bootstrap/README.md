@@ -32,6 +32,18 @@ rootpw --iscrypted <password>
 ```
 
 
+### Build l'image de rocky
+
+Une fois les éléments manquants installés, nous pouvons passer au build de notre image rocky avec packer.
+Pour cela, lancer la commande : 
+
+```
+packer build rocky-8.pkr.hcl
+```
+
+Le build prend en moyenne 10 à 15 minutes, durant cette période, il est possible de se connecter en VNC pour vérifier que tout ce passe bien.
+
+
 ## Debug
 
 #### Augmenter le niveau de log de packer
@@ -47,3 +59,8 @@ Dans votre fichier PAcker, ajouter la configuration suivante au provisionner d'A
 ```hcl
     extra_arguments = [ "-vv" ]
 ```
+
+
+## Axe d'amélioration :
+
+Il faudrait ensuite créer un service golang-myip et activer ce dernier au démarrage de la VM.
